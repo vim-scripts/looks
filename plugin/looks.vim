@@ -36,17 +36,14 @@ function! s:LoadLook(look)
 
     for [key, value] in items(a:look)
 
-        if count(s:boolean_opts, key)
-            exe "set " . (value ? "" : "no") . key
+        if key[0] == "&"
+            exe "let " . key . "=\"" . value . "\""
 
-        elseif count(s:value_opts, key)
-            exe "set " . key . "=" . value
-
-        elseif count(s:cmd_opts, key)
+        elseif key[0] == ":"
             exe key . (len(value) ? " " . value : "")
 
-        else
-            echo "Ignoring unknown key: " . key
+        elseif key[0] == "_"
+            " These are reserved for future versions
 
         endif
 
@@ -85,9 +82,5 @@ endfunction
 call <SID>SetupLookMaps()
 
 command! -nargs=1 -complete=custom,<SID>LookComplete Look call <SID>LoadNamedLook(<q-args>)
-
-let s:boolean_opts = ['cursorline', 'cursorcolumn']
-let s:value_opts = ['guifont']
-let s:cmd_opts = ['colorscheme']
 
 let &cpo = s:save_cpo

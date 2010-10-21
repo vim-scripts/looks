@@ -7,11 +7,11 @@ These looks are defined in vimrc (or somewhere else but are source-d) like the f
     let g:looks = {}
     let g:looks.dark = {
         \ '_map': "d",
-        \ 'colorscheme': "lucius",
-        \ 'guifont': "Inconsolata\\ Medium\\ 15",
-        \ 'cursorline': 1
+        \ ':colorscheme': "lucius",
+        \ '&guifont': "Inconsolata\\ Medium\\ 15",
+        \ '&cursorline': 1
         \ }
-    let g:looks.light = { "colorscheme": "tango" }
+    let g:looks.light = { ":colorscheme": "tango" }
 
 and the looks can be loaded with :Look command, like so
 

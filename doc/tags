@@ -1,4 +1,5 @@
 looks	looks.txt	/*looks*
 looks-author	looks.txt	/*looks-author*
+looks-changelog	looks.txt	/*looks-changelog*
 looks-define	looks.txt	/*looks-define*
 looks.txt	looks.txt	/*looks.txt*
