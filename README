@@ -1,0 +1,24 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3285
+
+This is a vim plugin I created for myself to help me manage various *looks* of vim. Each look is dictionary of settings and options that makes vim get a unique look.
+
+These looks are defined in vimrc (or somewhere else but are source-d) like the following,
+
+    let g:looks = {}
+    let g:looks.dark = {
+        \ '_map': "d",
+        \ 'colorscheme': "lucius",
+        \ 'guifont': "Inconsolata\\ Medium\\ 15",
+        \ 'cursorline': 1
+        \ }
+    let g:looks.light = { "colorscheme": "tango" }
+
+and the looks can be loaded with :Look command, like so
+
+    :Look dark
+
+Tab completion is also available on the command line for all available looks.
+
+Plugin hosted over at bitbucket.org, https://bitbucket.org/sharat87/vim-looks
+
+For more details, see ":h looks".
